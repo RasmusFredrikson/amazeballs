@@ -5,4 +5,11 @@ Temp
 *.userprefs
 obj
 .vs/
-Assets/Euforia
+VuforiaTest/Assets/Vuforia/*
+VuforiaTest/Assets/Vuforia.meta
+VuforiaTest/Assets/ForPrint/*
+VuforiaTest/Assets/ForPrint.meta
+VuforiaTest/Assets/StreamingAssets/*
+VuforiaTest/Assets/StreamingAssets.meta
+VuforiaTest/Assets/Editor/Vuforia/*
+VuforiaTest/Assets/Editor/Vuforia.meta
