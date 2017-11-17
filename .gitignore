@@ -12,4 +12,7 @@ VuforiaTest/Assets/ForPrint.meta
 VuforiaTest/Assets/StreamingAssets/*
 VuforiaTest/Assets/StreamingAssets.meta
 VuforiaTest/Assets/Editor/Vuforia/*
+VuforiaTest/Assets/Editor.meta
 VuforiaTest/Assets/Editor/Vuforia.meta
+*.apk
+VuforiaTest/QCAR/*
