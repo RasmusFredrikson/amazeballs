@@ -13,6 +13,7 @@ public class Board : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.Rotate(new Vector3(height/10,0, 0));
+		Debug.Log (height);
+		gameObject.transform.rotation = Quaternion.Euler(new Vector3(height*20-10, 0, height*20-10));
 	}
 }

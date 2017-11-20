@@ -21,19 +21,21 @@ public class CompareHeight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (b.transform.position.magnitude > 0.2f) {
+		if (b.transform.position.magnitude > 0) {
 
 			diff = a.transform.position - (b.transform.position - new Vector3(0, 0.01f, 0));
 			length = diff.magnitude;
+			Debug.Log (length);
 
 			text.text = length.ToString () + " , Active";
 		} else {
 			length = 4f;
+			Debug.Log (length);
 			text.text = length.ToString() + " , Not active";
 		}
 
-		length = length < 2f ? 2f : length;
-		length = length > 6f ? 6f : length;
-		board.height = length - 4.0f;
+		//length = length < 2f ? 2f : length;
+		//length = length > 6f ? 6f : length;
+		board.height = length;// - 4.0f;
 	}
 }
