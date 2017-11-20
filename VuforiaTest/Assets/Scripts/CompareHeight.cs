@@ -9,7 +9,7 @@ public class CompareHeight : MonoBehaviour {
 	public GameObject a;
 	public GameObject b;
 
-	public Board board;
+	public MyPlayerController player;
 
 	protected Vector3 diff = Vector3.zero;
 
@@ -17,7 +17,11 @@ public class CompareHeight : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	}
+
+        player = GameObject.Find("Player(Clone)").GetComponent<MyPlayerController>();
+
+    }
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -34,6 +38,15 @@ public class CompareHeight : MonoBehaviour {
 
 		length = length < 2f ? 2f : length;
 		length = length > 6f ? 6f : length;
-		board.height = length - 4.0f;
+
+        if (player == null)
+        {
+            Debug.Log("Find player");
+            player = GameObject.Find("Player(Clone)").GetComponent<MyPlayerController>();
+        } else
+        {
+		    player.height = length - 4.0f;
+        }
+
 	}
 }
