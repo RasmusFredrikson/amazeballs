@@ -15,7 +15,7 @@ public class Reset : MonoBehaviour {
 
 		if (gameObject.transform.position.y < -30f) {
 			gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
-			gameObject.transform.position = new Vector3 (0, -4.0f, 0);
+			gameObject.transform.position = new Vector3 (0, 4.0f, 0);
 		}
 
 

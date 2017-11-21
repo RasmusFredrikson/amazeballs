@@ -6,17 +6,21 @@ public class Board : MonoBehaviour {
 
 	public float height = 0;
 
-	public float[] corners; // LEFT RIGHT UP DOWN
+    public float ydir = 0;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.Rotate(new Vector3(height/10,0, 0));
+        
+        
 
+		Debug.Log (height);
+		gameObject.transform.rotation = Quaternion.Euler(new Vector3(height*4-10, 0, height*4-10));
 
+        //gameObject.transform.Rotate(new Vector3(height, 0, 0));
 	}
 }

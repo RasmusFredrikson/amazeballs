@@ -8,6 +8,8 @@ public class GetPlayers : MonoBehaviour {
     MyPlayerController player1;
     MyPlayerController player2;
 
+    public GameObject board;
+
     public Text text;
 
 	// Use this for initialization
@@ -24,6 +26,9 @@ public class GetPlayers : MonoBehaviour {
         {
             Debug.Log("player1 is found" + player1.distance.ToString());
             text.text = player1.distance.ToString();
+
+            //board.transform.rotation = Quaternion.Euler(new Vector3(player1.distance * 20 - 10, 0, player1.distance * 20 - 10));
+            board.GetComponent<Board>().height = player1.distance;
         }
 
         if (player2 == null)
