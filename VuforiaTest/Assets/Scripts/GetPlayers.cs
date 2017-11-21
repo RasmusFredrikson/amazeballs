@@ -5,38 +5,59 @@ using UnityEngine.UI;
 
 public class GetPlayers : MonoBehaviour {
 
-    MyPlayerController player1;
-    MyPlayerController player2;
+    public MyPlayerController[] players;
 
-    public GameObject board;
+    private GameObject board;
 
-    public Text text;
+    private Text text;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (player1 == null)
+        board = GameObject.Find("Board");
+        if (board == null)
         {
-            player1 = GameObject.Find("Player(Clone)").GetComponent<MyPlayerController>();
-        } else
-        {
-            Debug.Log("player1 is found" + player1.distance.ToString());
-            text.text = player1.distance.ToString();
-
-            //board.transform.rotation = Quaternion.Euler(new Vector3(player1.distance * 20 - 10, 0, player1.distance * 20 - 10));
-            board.GetComponent<Board>().height = player1.distance;
+            Debug.LogError("'Board' missing from scene");
         }
 
-        if (player2 == null)
+        GameObject UI = GameObject.Find("Debug UI");
+        if (UI != null)
         {
-            
+            text = UI.transform.GetChild(1).gameObject.GetComponent<Text>();
+        }
+        if (text == null)
+        {
+            Debug.LogError("Debug Text missing from 'Debug UI' or scene");
+        }
+
+        players = new MyPlayerController[4];
+        //players[0] = null;
+        players[1] = null;
+        players[2] = null;
+        players[3] = null;
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+        text.text = Network.player.ipAddress;
+
+
+        if (players[0] == null)
+        {
+            text.text = "\nNo player 1";
         } else
         {
-            Debug.Log("player1 is found" + player2.distance.ToString());
+            text.text = "\nP1: " + players[0].distance.ToString() + " ";
+
+            board.GetComponent<Board>().height = players[0].distance;
+        }
+
+        if (players[1] == null)
+        {
+            text.text = text.text + "\nNo player 2";
+        } else
+        {
+            text.text = text.text + "\nP2: " + players[1].distance.ToString();
         }
 	}
 }

@@ -12,14 +12,25 @@ public class MyPlayerController : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
         height = 0;
+        
+        if (isLocalPlayer)
+        {
+            // Add to compareHeight
+            GameObject shc = GameObject.Find("ScriptHolderClient");
+            if (shc == null || shc.GetComponent<CompareHeight>() == null)
+            {
+                Debug.LogError("CompareHeight not found on ScriptHolderClient");
+            }else
+            {
+                shc.GetComponent<CompareHeight>().player = this;
+            }
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Not local");
         if (isLocalPlayer)
         {
-            Debug.Log("Local");
             transform.position = new Vector3(height, -10, transform.position.z); // Test code
             CmdMove(height);
         }

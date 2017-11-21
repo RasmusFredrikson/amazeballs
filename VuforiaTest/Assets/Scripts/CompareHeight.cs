@@ -5,49 +5,66 @@ using UnityEngine.UI;
 
 public class CompareHeight : MonoBehaviour {
 
-	public Text text;
-	public GameObject a;
-	public GameObject b;
+	private GameObject cameraLocation;
+	private GameObject targetLocation;
+	private Text text;
 
-    public MyPlayerController player;
+    public MyPlayerController player; // Local player
 
     protected Vector3 diff = Vector3.zero;
 
-	protected float length = 4f;
+	protected float length;
+
+    public float initHeight = 4f;
+    public float maxHeight = 10f;
+    public float minHeight = 1f;
 
 	// Use this for initialization
 	void Start () {
+        length = initHeight;
 
-        player = GameObject.Find("Player(Clone)").GetComponent<MyPlayerController>();
+        cameraLocation = GameObject.Find("ARCamera");
+        targetLocation = GameObject.Find("ImageTarget");
+
+        GameObject UI = GameObject.Find("Debug UI");
+        if (UI != null)
+        {
+            text = UI.transform.GetChild(1).gameObject.GetComponent<Text>();
+        }
+
+        if (cameraLocation == null || targetLocation == null)
+        {
+            Debug.LogError("ARCamera or ImageTarget missing from scene");
+        }
+        if (text == null)
+        {
+            Debug.LogError("Debug Text missing from 'Debug UI' or scene");
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (b.transform.position.magnitude > 0) {
+		if (targetLocation.transform.position.magnitude > 0) { // TODO Check if target is tracked
 
-			diff = a.transform.position - (b.transform.position - new Vector3(0, 0.01f, 0));
+			diff = cameraLocation.transform.position - targetLocation.transform.position;
 			length = diff.magnitude;
-			Debug.Log (length);
 
 			text.text = length.ToString () + " , Active";
 		} else {
-			length = 4f;
-			Debug.Log (length);
 			text.text = length.ToString() + " , Not active";
 		}
 
         if (player == null)
         {
-            Debug.Log("Find player");
-            player = GameObject.Find("Player(Clone)").GetComponent<MyPlayerController>();
-        }
-        else
+            Debug.LogError("Player is missing");
+        } else
         {
-            player.height = length;// - 4.0f;
-        }
+            // Clamp height
+            length = length < minHeight ? minHeight : length;
+            length = length > maxHeight ? maxHeight : length;
 
-        //length = length < 2f ? 2f : length;
-        //length = length > 6f ? 6f : length;
-        player.height = length;// - 4.0f;
-	}
+            // Set the height on the player
+            player.height = length;
+	    }
+    }
 }

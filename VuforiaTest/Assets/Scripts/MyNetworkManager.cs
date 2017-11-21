@@ -22,5 +22,23 @@ public class MyNetworkManager : NetworkManager {
 		SceneManager.LoadScene ("Scenes/GameScene", LoadSceneMode.Additive);
 	}
 
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
+    {
+        base.OnServerAddPlayer(conn, playerControllerId);
+        Debug.LogError("Added player" + playerControllerId.ToString());
+
+        MyPlayerController player = conn.playerControllers[0].gameObject.GetComponent<MyPlayerController>();
+
+        GameObject shs = GameObject.Find("ScriptHolderServer");
+        if (shs == null || shs.GetComponent<GetPlayers>() == null)
+        {
+            Debug.LogError("GetPlayer not found on ScriptHolderServer");
+        }else
+        {
+            shs.GetComponent<GetPlayers>().players[playerControllerId] = player;
+        }
+
+        Debug.LogError(player.ToString());
+    }
 
 }
