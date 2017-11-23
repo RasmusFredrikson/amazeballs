@@ -15,9 +15,9 @@ public class CompareHeight : MonoBehaviour {
 
 	protected float height;
 
-    public float initHeight = 4f;
+    public float initHeight = 0f;
     public float maxHeight = 10f;
-    public float minHeight = 1f;
+    public float minHeight = 0f;
 
 	// Use this for initialization
 	void Start () {
