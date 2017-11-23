@@ -13,7 +13,7 @@ public class CompareHeight : MonoBehaviour {
 
     protected Vector3 diff = Vector3.zero;
 
-	protected float length;
+	protected float height;
 
     public float initHeight = 4f;
     public float maxHeight = 10f;
@@ -21,7 +21,7 @@ public class CompareHeight : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        length = initHeight;
+        height = initHeight;
 
         cameraLocation = GameObject.Find("ARCamera");
         targetLocation = GameObject.Find("ImageTarget");
@@ -47,11 +47,11 @@ public class CompareHeight : MonoBehaviour {
 		if (targetLocation.transform.position.magnitude > 0) { // TODO Check if target is tracked
 
 			diff = cameraLocation.transform.position - targetLocation.transform.position;
-			length = diff.magnitude;
+			height = diff.magnitude;
 
-			text.text = length.ToString () + " , Active";
+			text.text = height.ToString () + " , Active";
 		} else {
-			text.text = length.ToString() + " , Not active";
+			text.text = height.ToString() + " , Not active";
 		}
 
         if (player == null)
@@ -60,11 +60,11 @@ public class CompareHeight : MonoBehaviour {
         } else
         {
             // Clamp height
-            length = length < minHeight ? minHeight : length;
-            length = length > maxHeight ? maxHeight : length;
+            height = height < minHeight ? minHeight : height;
+            height = height > maxHeight ? maxHeight : height;
 
             // Set the height on the player
-            player.height = length;
+            player.height = height;
 	    }
     }
 }

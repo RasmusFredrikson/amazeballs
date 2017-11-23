@@ -30,11 +30,6 @@ public class GetPlayers : MonoBehaviour {
         }
 
         players = new MyPlayerController[4];
-        //players[0] = null;
-        players[1] = null;
-        players[2] = null;
-        players[3] = null;
-
     }
 
     // Update is called once per frame
