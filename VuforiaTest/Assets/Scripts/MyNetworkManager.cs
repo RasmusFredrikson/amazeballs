@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
+using System;
+
 // Source https://stackoverflow.com/questions/40919858/different-scenes-for-server-and-clients-using-unity-networking-hlapi
 
 public class MyNetworkManager : NetworkManager {
@@ -14,7 +16,8 @@ public class MyNetworkManager : NetworkManager {
 
 		SceneManager.LoadScene ("Scenes/PhoneScene", LoadSceneMode.Additive);
 		ClientScene.Ready (conn);
-		ClientScene.AddPlayer (conn, 0); // TODO next available number
+
+        ClientScene.AddPlayer (conn, 0);
 	}
 
 	public override void OnServerSceneChanged(string scenename) {
@@ -27,6 +30,8 @@ public class MyNetworkManager : NetworkManager {
         base.OnServerAddPlayer(conn, playerControllerId);
         Debug.LogError("Added player" + playerControllerId.ToString());
 
+        Debug.LogError(conn.connectionId);
+
         MyPlayerController player = conn.playerControllers[0].gameObject.GetComponent<MyPlayerController>();
 
         GameObject shs = GameObject.Find("ScriptHolderServer");
@@ -35,7 +40,7 @@ public class MyNetworkManager : NetworkManager {
             Debug.LogError("GetPlayer not found on ScriptHolderServer");
         }else
         {
-            shs.GetComponent<GetPlayers>().players[playerControllerId] = player;
+            shs.GetComponent<GetPlayers>().players[conn.connectionId-1] = player;
         }
 
         Debug.LogError(player.ToString());

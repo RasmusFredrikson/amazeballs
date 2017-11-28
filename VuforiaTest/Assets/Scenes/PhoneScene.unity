@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -222,7 +222,44 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1266424087}
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
+        type: 2}
+      propertyPath: mTrackableName
+      value: triangles
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
+        type: 2}
+      propertyPath: mDataSetPath
+      value: Vuforia/AMazeBalls2.xml
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
+        type: 2}
+      propertyPath: mAspectRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
+        type: 2}
+      propertyPath: mWidth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
+        type: 2}
+      propertyPath: mHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762782988278740, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762782988278740, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762782988278740, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
   m_IsPrefabParent: 0
@@ -242,7 +279,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.31150305, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -294,7 +331,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 547d9fbe00000000000000bf000000000000803f000000000000000000000000547d9fbe000000000000003f000000000000803f00000000000000000000803f547d9f3e00000000000000bf000000000000803f000000000000803f00000000547d9f3e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -401,31 +438,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1012395806807742, guid: e3dd70c944bd3374a8753925518c12c5,
     type: 2}
   m_PrefabInternal: {fileID: 717953945}
---- !u!21 &1266424087
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: IMG_20171115_235023Material
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: be8f5d8e32a2458abaf8b0f08d49acfb, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1324507981 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1833992971261802, guid: 3411bcb4803c4ff448aa0bcd34477d53,
@@ -447,12 +459,12 @@ Prefab:
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 319
+      value: 379.5
       objectReference: {fileID: 0}
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 179.5
+      value: 137
       objectReference: {fileID: 0}
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
