@@ -44,9 +44,9 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - vuforiatest2
+    - Amazeballs
     dataSetsToActivate:
-    - vuforiatest2
+    - Amazeballs
   videoBackground:
     clippingMode: 0
     numDivisions: 2
