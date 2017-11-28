@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  initHeight: 4
-  maxHeight: 10
-  minHeight: 1
+  initHeight: 105
+  maxHeight: 150
+  minHeight: 60
+  scaleHeight: 4
