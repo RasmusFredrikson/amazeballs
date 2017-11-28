@@ -18,6 +18,7 @@ public class CompareHeight : MonoBehaviour {
     public float initHeight = 0f;
     public float maxHeight = 10f;
     public float minHeight = 0f;
+    public float scaleHeight = 4f;
 
 	// Use this for initialization
 	void Start () {
@@ -64,7 +65,7 @@ public class CompareHeight : MonoBehaviour {
             height = height > maxHeight ? maxHeight : height;
 
             // Set the height on the player
-            player.height = height;
+            player.height =  (height - initHeight) * scaleHeight;
 	    }
     }
 }
