@@ -65,7 +65,30 @@ public class CompareHeight : MonoBehaviour {
             height = height > maxHeight ? maxHeight : height;
 
             // Set the height on the player
-            player.height =  (height - initHeight) * scaleHeight;
+            if (height < initHeight)
+            {
+                player.height = ((height - minHeight) / (initHeight - minHeight)) - 1;
+            } else
+            {
+                player.height = ((height - initHeight) / (maxHeight - initHeight));
+            }
+
+            
 	    }
+    }
+
+    public void onClickInit()
+    {
+        initHeight = height;
+    }
+
+    public void onClickMin()
+    {
+        minHeight = height;
+    }
+
+    public void onClickMax()
+    {
+        maxHeight = height;
     }
 }

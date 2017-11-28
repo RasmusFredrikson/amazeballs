@@ -24,6 +24,6 @@ public class Board : MonoBehaviour
             Debug.LogError("Height" + i + " : " + height[i]);
         }
 
-        gameObject.transform.rotation = Quaternion.Euler(new Vector3(height[0] - height[2], 0, height[1] - height[3]));
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(height[0]*45 - height[2]*45, 0, height[1]*45 - height[3]*45));
     }
 }
