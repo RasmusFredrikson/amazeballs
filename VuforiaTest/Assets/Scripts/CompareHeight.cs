@@ -15,9 +15,10 @@ public class CompareHeight : MonoBehaviour {
 
 	protected float height;
 
-    public float initHeight = 4f;
+    public float initHeight = 0f;
     public float maxHeight = 10f;
-    public float minHeight = 1f;
+    public float minHeight = 0f;
+    public float scaleHeight = 4f;
 
 	// Use this for initialization
 	void Start () {
@@ -64,7 +65,30 @@ public class CompareHeight : MonoBehaviour {
             height = height > maxHeight ? maxHeight : height;
 
             // Set the height on the player
-            player.height = height;
+            if (height < initHeight)
+            {
+                player.height = ((height - minHeight) / (initHeight - minHeight)) - 1;
+            } else
+            {
+                player.height = ((height - initHeight) / (maxHeight - initHeight));
+            }
+
+            
 	    }
+    }
+
+    public void onClickInit()
+    {
+        initHeight = height;
+    }
+
+    public void onClickMin()
+    {
+        minHeight = height;
+    }
+
+    public void onClickMax()
+    {
+        maxHeight = height;
     }
 }

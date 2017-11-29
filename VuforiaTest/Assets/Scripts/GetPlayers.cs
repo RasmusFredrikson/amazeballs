@@ -36,23 +36,20 @@ public class GetPlayers : MonoBehaviour {
     void Update () {
         text.text = Network.player.ipAddress;
 
-
-        if (players[0] == null)
+        for (int i = 0; i < 4 || i < players.Length; i++)
         {
-            text.text = "\nNo player 1";
-        } else
-        {
-            text.text = "\nP1: " + players[0].distance.ToString() + " ";
+            if (players[i] == null)
+            {
+                text.text = text.text + "\nNo player " + (i + 1).ToString();
+            }
+            else
+            {
+                text.text = text.text +  "\nP" + (i + 1).ToString() + ": " + players[i].distance.ToString() + " ";
 
-            board.GetComponent<Board>().height = players[0].distance;
+                board.GetComponent<Board>().height[i] = players[i].distance;
+            }
+
+
         }
-
-        if (players[1] == null)
-        {
-            text.text = text.text + "\nNo player 2";
-        } else
-        {
-            text.text = text.text + "\nP2: " + players[1].distance.ToString();
-        }
-	}
+    }
 }
