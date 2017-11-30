@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -498,6 +498,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &775604064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775604061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f998a424e9eb64f23a79e0905311847d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &775604067 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4175987472670368, guid: 409c11e8c4192eb4594544a7753ba2a6,
@@ -716,12 +727,12 @@ Prefab:
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 238
+      value: 379.5
       objectReference: {fileID: 0}
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 264.5
+      value: 108.5
       objectReference: {fileID: 0}
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}

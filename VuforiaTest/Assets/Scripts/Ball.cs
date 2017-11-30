@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using System.IO;
 using System;
 
-public class Reset : MonoBehaviour {
+public class Ball : MonoBehaviour {
 
 	float timeToFinishLine = 0f;
 

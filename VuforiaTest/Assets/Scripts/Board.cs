@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,10 +38,11 @@ public class Board : MonoBehaviour
             //Debug.LogError("Height" + i + " : " + height[i]);
         }
         
-        if (Input.GetKeyDown("m"))
-		    {
-             mode = mode + 1;
-		    }
+        if (Input.GetKeyDown("m")) 
+        {
+            mode = mode + 1;
+            mode = mode % 4;
+        }
 
         switch (mode)
         {
