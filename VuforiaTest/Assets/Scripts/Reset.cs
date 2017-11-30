@@ -17,9 +17,7 @@ public class Reset : MonoBehaviour {
 	void Update () {
 		timeToFinishLine += Time.deltaTime;
 		if (gameObject.transform.position.y < -30f) {
-			gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
-			gameObject.transform.position = new Vector3 (-3.92f, 4.0f, -4.06f);
-			timeToFinishLine = 0;
+            ResetBall();
 		}
 
 		if (Input.GetKeyDown("r"))
@@ -32,10 +30,17 @@ public class Reset : MonoBehaviour {
 		if (other.tag == "Finish") {
 			Debug.Log ("You have reached the goal");
 			SaveHighscore ();
+            ResetBall();
 		}
 	}
 
-	void SaveHighscore() {
+    private void ResetBall() {
+		gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		gameObject.transform.position = new Vector3(-3.92f, 4.0f, -4.06f);
+		timeToFinishLine = 0;
+    }
+
+    void SaveHighscore() {
 		string filePath = @"./Highscore.csv";  
 		string delimiter = ",";   
 		string[][] output;
