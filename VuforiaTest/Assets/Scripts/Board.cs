@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,6 +37,11 @@ public class Board : MonoBehaviour
         {
             //Debug.LogError("Height" + i + " : " + height[i]);
         }
+        
+        if (Input.GetKeyDown("m"))
+		    {
+             mode = mode + 1;
+		    }
 
         switch (mode)
         {
@@ -47,13 +52,33 @@ public class Board : MonoBehaviour
                 holdCorner();
                 break;
             case 2:
-                addForces();
+                //addForces();
                 break;
-
-
+            case 3:
+                keybind();
+                break;
         }
         
         
+    }
+    
+    void keybind() {
+        if (Input.GetKeyDown("w"))
+		    {
+             gameObject.transform.Rotate(new Vector3(-5, 0, 0));
+		    }
+        else if (Input.GetKeyDown("s"))
+        {
+        	gameObject.transform.Rotate(new Vector3(5, 0, 0));
+        }
+        else if (Input.GetKeyDown("a"))
+        {
+        	gameObject.transform.Rotate(new Vector3(0, 0, -5));
+        }
+        else if (Input.GetKeyDown("d"))
+        {
+        	gameObject.transform.Rotate(new Vector3(0, 0, 5));
+        }
     }
 
     // 2 Players or more
