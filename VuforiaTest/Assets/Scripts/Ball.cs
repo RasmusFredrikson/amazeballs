@@ -16,14 +16,19 @@ public class Reset : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timeToFinishLine += Time.deltaTime;
+        gameObject.transform.Rotate(1,1,1); //Keeps the ball from getting stuck
 		if (gameObject.transform.position.y < -30f) {
             ResetBall();
 		}
 
-		if (Input.GetKeyDown("r"))
+		if (Input.GetKeyDown("h"))
 		{
             ReadHighscore();
         }
+		if (Input.GetKeyDown("r"))
+		{
+            ResetBall();
+		}
 	}
 
 	void OnTriggerEnter (Collider other){
