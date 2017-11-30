@@ -19,11 +19,31 @@ public class Board : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        for (int i = 0; i < 4; i++)
-        {
-            Debug.LogError("Height" + i + " : " + height[i]);
-        }
+		//        for (int i = 0; i < 4; i++)
+		//        {
+		//            Debug.LogError("Height" + i + " : " + height[i]);
+		//        }
 
-        gameObject.transform.rotation = Quaternion.Euler(new Vector3(height[0]*45 - height[2]*45, 0, height[1]*45 - height[3]*45));
+		//if (Input.GetKeyDown("w"))
+		//{
+  //          gameObject.transform.Rotate(new Vector3(-5, 0, 0));
+		//}
+
+		//else if (Input.GetKeyDown("s"))
+		//{
+		//	gameObject.transform.Rotate(new Vector3(5, 0, 0));
+		//}
+
+		//else if (Input.GetKeyDown("a"))
+		//{
+		//	gameObject.transform.Rotate(new Vector3(0, 0, -5));
+		//}
+
+		//else if (Input.GetKeyDown("d"))
+		//{
+		//	gameObject.transform.Rotate(new Vector3(0, 0, 5));
+		//}
+
+		gameObject.transform.rotation = Quaternion.Euler(new Vector3(height[0]*45 - height[2]*45, 0, height[1]*45 - height[3]*45));
     }
 }
