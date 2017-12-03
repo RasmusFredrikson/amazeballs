@@ -16,5 +16,6 @@ Assets/Editor/Vuforia/*
 Assets/Editor.meta
 Assets/Editor/Vuforia.meta
 Assets/PostProcessing
+Assets/PostProcessing.meta
 *.apk
 QCAR/*
