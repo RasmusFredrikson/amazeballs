@@ -14,5 +14,6 @@ VuforiaTest/Assets/StreamingAssets.meta
 VuforiaTest/Assets/Editor/Vuforia/*
 VuforiaTest/Assets/Editor.meta
 VuforiaTest/Assets/Editor/Vuforia.meta
+VuforiaTest/Assets/PostProcessing
 *.apk
 VuforiaTest/QCAR/*
