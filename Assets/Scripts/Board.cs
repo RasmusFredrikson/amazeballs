@@ -8,10 +8,13 @@ public class Board : MonoBehaviour
     public float[] height; // public variable changed by GetPlayers
 
     private Rigidbody rb;
+    private GameObject indicators;
 
     public int mode = 1;
 
     private float ropeLength = 2f;
+
+    private float boardRadius = 10f;
 
     // Use this for initialization
     void Start() {
@@ -22,11 +25,19 @@ public class Board : MonoBehaviour
             height[i] = 0;
         }
 
-        if (mode == 2)
+        indicators = Instantiate(Resources.Load("IndicatorHolder"), transform, false) as GameObject;
+
+        Renderer rend1 = indicators.transform.GetChild(0).gameObject.GetComponent<Renderer>();
+        rend1.material.SetColor("_Color", Color.red);
+        Renderer rend2 = indicators.transform.GetChild(1).gameObject.GetComponent<Renderer>();
+        rend2.material.SetColor("_Color", Color.blue);
+        Renderer rend3 = indicators.transform.GetChild(2).gameObject.GetComponent<Renderer>();
+        rend3.material.SetColor("_Color", Color.green);
+        indicators.SetActive(false);
+
+        for (int i = 0; i < mode; i++)
         {
-            rb = gameObject.AddComponent<Rigidbody>();
-            rb.useGravity = false;
-            rb.mass = 100;
+            changeMode();
         }
             
     }
@@ -40,8 +51,7 @@ public class Board : MonoBehaviour
         
         if (Input.GetKeyDown("m")) 
         {
-            mode = mode + 1;
-            mode = mode % 4;
+            changeMode();
         }
 
         switch (mode)
@@ -58,9 +68,54 @@ public class Board : MonoBehaviour
             case 3:
                 keybind();
                 break;
+            case 4:
+                holdCornerMiddle();
+                break;
         }
         
         
+    }
+
+    void changeMode()
+    {
+        // Remove mode specifics
+        switch (mode)
+        {
+            case 1:
+                indicators.SetActive(false);
+                break;
+            case 2:
+                Destroy(gameObject.GetComponent<Rigidbody>());
+                rb = null;
+                break;
+            case 4:
+                indicators.SetActive(false);
+                break;
+        }
+        mode = mode + 1;
+        mode = mode % 5;
+
+        // Add mode specifc
+        switch (mode)
+        {
+            case 1:
+                indicators.SetActive(true);
+                indicators.transform.GetChild(0).position = new Vector3(boardRadius, 0, boardRadius);
+                indicators.transform.GetChild(1).position = new Vector3(boardRadius, 0, -boardRadius);
+                indicators.transform.GetChild(2).position = new Vector3(-boardRadius, 0, -boardRadius);
+                break;
+            case 2:
+                rb = gameObject.AddComponent<Rigidbody>();
+                rb.useGravity = false;
+                rb.mass = 100;
+                break;
+            case 4:
+                indicators.SetActive(true);
+                indicators.transform.GetChild(0).position = new Vector3(-boardRadius, 0, boardRadius);
+                indicators.transform.GetChild(1).position = new Vector3(boardRadius, 0, boardRadius);
+                indicators.transform.GetChild(2).position = new Vector3(0, 0, -boardRadius);
+                break;
+        }
     }
     
     void keybind() {
@@ -91,13 +146,14 @@ public class Board : MonoBehaviour
     // 3 Players
     void holdCorner()
     {
-        Vector3 point1 = new Vector3(10, height[0]*10, 10);
-        Vector3 point2 = new Vector3(10, height[1]*10, -10);
-        Vector3 point3 = new Vector3(-10, height[2]*10, -10);
+        Vector3 point1 = new Vector3(boardRadius, height[0] * 10, boardRadius);
+        Vector3 point2 = new Vector3(boardRadius, height[1] * 10, -boardRadius);
+        Vector3 point3 = new Vector3(-boardRadius, height[2] * 10, -boardRadius);
 
         Vector3 line1 = point1 - point2;
         Vector3 line2 = point1 - point3;
         Vector3 normal = Vector3.Cross(line1, line2);
+
         if (Vector3.Dot(normal, Vector3.up) < 0)
         {
             normal = -normal;
@@ -110,6 +166,29 @@ public class Board : MonoBehaviour
         gameObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(line1, normal), 150*Time.deltaTime);
     }
 
+    // 3 Players
+    void holdCornerMiddle()
+    {
+        Vector3 point1 = new Vector3(-boardRadius, height[0] * 10, boardRadius);
+        Vector3 point2 = new Vector3(boardRadius, height[1] * 10, boardRadius);
+        Vector3 point3 = new Vector3(0, height[2] * 10, -boardRadius);
+
+        Vector3 line1 = point3 - point1;
+        Vector3 line2 = point3 - point2;
+        Vector3 normal = Vector3.Cross(line1, line2);
+        Vector3 forward =  ((point1 + point2)  - point3).normalized;
+        if (Vector3.Dot(normal, Vector3.up) < 0)
+        {
+            normal = -normal;
+        }
+
+        Vector3 pos = (point3 + ((point1 + point2) / 2f)) / 2f;
+
+        gameObject.transform.position = Vector3.MoveTowards(transform.position, pos, 1 * Time.deltaTime);
+
+        gameObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(forward, normal), 150 * Time.deltaTime);
+    }
+
     // 4 Players
     void addForces()
     {
@@ -119,10 +198,10 @@ public class Board : MonoBehaviour
         Vector3 point4 = transform.position + transform.forward * -10 + transform.right * 10;
 
 
-        Vector3 force1 = new Vector3(12, 4, 12) - point1;
-        Vector3 force2 = new Vector3(-12, 4, 12) -point2;
-        Vector3 force3 = new Vector3(-12, 4, -12) -point3;
-        Vector3 force4 = new Vector3(12, 4,- 12) -point4;
+        Vector3 force1 = new Vector3(boardRadius + 2, 4, boardRadius + 2) - point1;
+        Vector3 force2 = new Vector3(-boardRadius + 2, 4, boardRadius + 2) - point2;
+        Vector3 force3 = new Vector3(-boardRadius + 2, 4, -boardRadius + 2) -point3;
+        Vector3 force4 = new Vector3(boardRadius + 2, 4,-boardRadius + 2) - point4;
 
         force1 = force1.normalized * (force1.magnitude > ropeLength ? Mathf.Pow(force1.magnitude, 2): 0);
         force2 = force2.normalized * (force2.magnitude > ropeLength ? Mathf.Pow(force2.magnitude, 2) : 0);

@@ -34,14 +34,19 @@ public class MyNetworkManager : NetworkManager {
 
         MyPlayerController player = conn.playerControllers[0].gameObject.GetComponent<MyPlayerController>();
 
+        int playerID = conn.connectionId - 1;
+
         GameObject shs = GameObject.Find("ScriptHolderServer");
         if (shs == null || shs.GetComponent<GetPlayers>() == null)
         {
             Debug.LogError("GetPlayer not found on ScriptHolderServer");
         }else
         {
-            shs.GetComponent<GetPlayers>().players[conn.connectionId-1] = player;
+            shs.GetComponent<GetPlayers>().players[playerID] = player;
+            player.setID(playerID);
         }
+
+        
 
         Debug.LogError(player.ToString());
     }
