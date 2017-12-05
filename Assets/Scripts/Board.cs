@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Board : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class Board : MonoBehaviour
     private Rigidbody rb;
     private GameObject indicators;
 
-    public int mode = 1;
+    private int mode = 1;
+    public int setMode = 4;
 
     private float ropeLength = 2f;
 
@@ -35,7 +37,7 @@ public class Board : MonoBehaviour
         rend3.material.SetColor("_Color", Color.green);
         indicators.SetActive(false);
 
-        for (int i = 0; i < mode; i++)
+        for (int i = 1; i < setMode; i++)
         {
             changeMode();
         }
@@ -71,6 +73,23 @@ public class Board : MonoBehaviour
             case 4:
                 holdCornerMiddle();
                 break;
+        }
+
+        if (mode == 1 || mode == 4)
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                if (height[i] <= -1)
+                {
+                    SetText(indicators.transform.GetChild(i).gameObject, "Low");
+                }else if (height[i] >= 1)
+                {
+                    SetText(indicators.transform.GetChild(i).gameObject, "High");
+                }else
+                {
+                    SetText(indicators.transform.GetChild(i).gameObject, "");
+                }
+            }
         }
         
         
@@ -212,5 +231,14 @@ public class Board : MonoBehaviour
         rb.AddForceAtPosition(force2, point2, ForceMode.VelocityChange);
         rb.AddForceAtPosition(force3, point3, ForceMode.VelocityChange);
         rb.AddForceAtPosition(force4, point4, ForceMode.VelocityChange);
+    }
+
+    void SetText(GameObject indicator, string message)
+    {
+        Transform textTransform = indicator.transform.GetChild(0).GetChild(0);
+
+        textTransform.gameObject.GetComponent<Text>().text = message;
+        textTransform.rotation = Quaternion.LookRotation(indicator.transform.position - UnityEngine.Camera.main.transform.position);
+        textTransform.position = indicator.transform.position + textTransform.up*2;
     }
 }
