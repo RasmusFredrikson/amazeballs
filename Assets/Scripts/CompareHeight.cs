@@ -57,7 +57,7 @@ public class CompareHeight : MonoBehaviour {
 
         if (player == null)
         {
-            Debug.LogError("Player is missing");
+            Debug.Log("Player is not yet initialized");
         } else
         {
             // Clamp height

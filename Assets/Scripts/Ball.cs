@@ -121,9 +121,9 @@ public class Ball : MonoBehaviour
         if (reachedFinishedLine)
         {
             highscoreText.text = "You didn't reach a highscore :( \n";
-            for (int i = 0; i < highScores.Count && i <= 10; i++)
+            for (int i = 0; i < highScores.Count && i < 10; i++)
             {
-                if (timeToFinishLine == highScores[i])
+                if (Mathf.Abs(timeToFinishLine - highScores[i]) < 1E-2)
                 {
                     highscoreText.text = "Congratz!\nYou finished in " + (i+1) + " place.\n";
                     break;
@@ -133,7 +133,7 @@ public class Ball : MonoBehaviour
         } else 
             highscoreText.text += "Paused. \nPress 'P' to unpause and 'R' to reset. \n\nBest times \n";
 
-        for (int i = 0; i < highScores.Count && i <= 10; i++)
+        for (int i = 0; i < highScores.Count && i < 10; i++)
         {
             highscoreText.text += Math.Round(highScores[i], 2) + "s\n";
         }
