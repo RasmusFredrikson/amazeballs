@@ -123,15 +123,15 @@ public class Ball : MonoBehaviour
             highscoreText.text = "You didn't reach a highscore :( \n";
             for (int i = 0; i < highScores.Count && i <= 10; i++)
             {
-                if (timeToFinishLine < highScores[i])
+                if (timeToFinishLine == highScores[i])
                 {
-                    highscoreText.text = "You finished in " + i + " place. Congratz!\n";
+                    highscoreText.text = "Congratz!\nYou finished in " + (i+1) + " place.\n";
                     break;
                 }
             }
             highscoreText.text += "Press 'R' to play again. \n\nBest times \n";
         } else 
-            highscoreText.text += "Paused. \n\nBest times \n";
+            highscoreText.text += "Paused. \nPress 'P' to unpause and 'R' to reset. \n\nBest times \n";
 
         for (int i = 0; i < highScores.Count && i <= 10; i++)
         {
