@@ -14,8 +14,6 @@ namespace UnityEngine.Networking
 
         private int scale;
 
-        // Runtime variable
-        bool showServer = false;
 
         void Awake()
         {
