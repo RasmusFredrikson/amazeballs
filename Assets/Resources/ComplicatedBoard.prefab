@@ -107,9 +107,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4238910911035294}
-  - component: {fileID: 114138142666678520}
+  - component: {fileID: 114987656004804928}
   m_Layer: 0
-  m_Name: Fancy Board
+  m_Name: ComplicatedBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 1426360994069768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4815503712388052}
   - {fileID: 4920183718763842}
@@ -1302,7 +1302,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114138142666678520
+--- !u!114 &114987656004804928
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1310,11 +1310,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1426360994069768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614077a73012ce245af9529eea99ca22, type: 3}
+  m_Script: {fileID: 11500000, guid: 09a8020cb049d48b4a9fc63d880bb4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: []
-  setMode: 4
+  width: 10
+  length: 10
+  spawnPosition: {x: -8, y: 4, z: -8}
 --- !u!212 &212495399114077470
 SpriteRenderer:
   m_ObjectHideFlags: 1

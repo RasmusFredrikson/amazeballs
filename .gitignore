@@ -10,7 +10,7 @@ Assets/PostProcessing
 Assets/PostProcessing.meta
 *.apk
 QCAR/*
-Highscore.csv
+*.csv
 Assets/Vuforia/*
 Assets/Vuforia.meta
 Assets/ForPrint/*

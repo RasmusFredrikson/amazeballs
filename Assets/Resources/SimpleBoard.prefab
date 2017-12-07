@@ -161,6 +161,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4399053785656228}
+  - component: {fileID: 114541425247378478}
   m_Layer: 0
   m_Name: SimpleBoard
   m_TagString: Untagged
@@ -795,6 +796,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114541425247378478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768716762461588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a8020cb049d48b4a9fc63d880bb4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 10
+  length: 5
+  spawnPosition: {x: -7, y: 4, z: 3.5}
 --- !u!212 &212712401618373530
 SpriteRenderer:
   m_ObjectHideFlags: 1
