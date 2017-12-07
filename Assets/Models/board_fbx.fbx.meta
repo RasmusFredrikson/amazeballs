@@ -1,0 +1,517 @@
+fileFormatVersion: 2
+guid: 3b5fdb66a586e5442b5beca0b523bcd0
+timeCreated: 1512644113
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: blue_path
+    100002: board1
+    100004: board2
+    100006: board3
+    100008: board_elements
+    100010: //RootNode
+    100012: board_with_holes
+    100014: boarder1
+    100016: boarder10
+    100018: boarder11
+    100020: boarder12
+    100022: boarder13
+    100024: boarder2
+    100026: boarder5
+    100028: boarder6
+    100030: boarder7
+    100032: boarder8
+    100034: boarder9
+    100036: bridge
+    100038: bridge 1
+    100040: center
+    100042: edge1
+    100044: edge2
+    100046: edge3
+    100048: edge4
+    100050: edges
+    100052: end
+    100054: end 1
+    100056: group1
+    100058: group2
+    100060: group3
+    100062: hole3
+    100064: hole3 1
+    100066: hole4
+    100068: hole4 1
+    100070: holes
+    100072: holes1
+    100074: lantern1
+    100076: lantern2
+    100078: lantern3
+    100080: lantern4
+    100082: lanterns
+    100084: lava
+    100086: lil_boarders
+    100088: pCube11
+    100090: pCube11 1
+    100092: pCube12
+    100094: pCube12 1
+    100096: pCube13
+    100098: pCube13 1
+    100100: pCube14
+    100102: pCube14 1
+    100104: pCube15
+    100106: pCube15 1
+    100108: pCube16
+    100110: pCube16 1
+    100112: pCube17
+    100114: pCube17 1
+    100116: pCube18
+    100118: pCube18 1
+    100120: pCube19
+    100122: pCube2
+    100124: pCube2 1
+    100126: pCube2 2
+    100128: pCube2 3
+    100130: pCube3
+    100132: pCube3 1
+    100134: pCube3 2
+    100136: pCube3 3
+    100138: pCube4
+    100140: pCube4 1
+    100142: pCube4 2
+    100144: pCube4 3
+    100146: pCube5
+    100148: pCube5 1
+    100150: pCube5 2
+    100152: pCube5 3
+    100154: pCube6
+    100156: pCube6 1
+    100158: pCube6 2
+    100160: pCube6 3
+    100162: pCube7
+    100164: pCube7 1
+    100166: pCube7 2
+    100168: pCube7 3
+    100170: pCube8
+    100172: pCube8 1
+    100174: pCube8 2
+    100176: pCube8 3
+    100178: pCylinder1
+    100180: pCylinder2
+    100182: pCylinder3
+    100184: pSphere1
+    100186: pSphere1 1
+    100188: pSphere1 2
+    100190: pSphere1 3
+    100192: transform1
+    100194: transform1 1
+    100196: transform1 2
+    100198: transform1 3
+    100200: transform10
+    100202: transform11
+    100204: transform12
+    100206: transform2
+    100208: transform2 1
+    100210: transform2 2
+    100212: transform2 3
+    100214: transform3
+    100216: transform3 1
+    100218: transform3 2
+    100220: transform3 3
+    100222: transform4
+    100224: transform4 1
+    100226: transform4 2
+    100228: transform4 3
+    100230: transform5
+    100232: transform6
+    100234: transform7
+    100236: transform8
+    100238: transform9
+    100240: turnstile
+    100242: turnstile 1
+    100244: board4
+    400000: blue_path
+    400002: board1
+    400004: board2
+    400006: board3
+    400008: board_elements
+    400010: //RootNode
+    400012: board_with_holes
+    400014: boarder1
+    400016: boarder10
+    400018: boarder11
+    400020: boarder12
+    400022: boarder13
+    400024: boarder2
+    400026: boarder5
+    400028: boarder6
+    400030: boarder7
+    400032: boarder8
+    400034: boarder9
+    400036: bridge
+    400038: bridge 1
+    400040: center
+    400042: edge1
+    400044: edge2
+    400046: edge3
+    400048: edge4
+    400050: edges
+    400052: end
+    400054: end 1
+    400056: group1
+    400058: group2
+    400060: group3
+    400062: hole3
+    400064: hole3 1
+    400066: hole4
+    400068: hole4 1
+    400070: holes
+    400072: holes1
+    400074: lantern1
+    400076: lantern2
+    400078: lantern3
+    400080: lantern4
+    400082: lanterns
+    400084: lava
+    400086: lil_boarders
+    400088: pCube11
+    400090: pCube11 1
+    400092: pCube12
+    400094: pCube12 1
+    400096: pCube13
+    400098: pCube13 1
+    400100: pCube14
+    400102: pCube14 1
+    400104: pCube15
+    400106: pCube15 1
+    400108: pCube16
+    400110: pCube16 1
+    400112: pCube17
+    400114: pCube17 1
+    400116: pCube18
+    400118: pCube18 1
+    400120: pCube19
+    400122: pCube2
+    400124: pCube2 1
+    400126: pCube2 2
+    400128: pCube2 3
+    400130: pCube3
+    400132: pCube3 1
+    400134: pCube3 2
+    400136: pCube3 3
+    400138: pCube4
+    400140: pCube4 1
+    400142: pCube4 2
+    400144: pCube4 3
+    400146: pCube5
+    400148: pCube5 1
+    400150: pCube5 2
+    400152: pCube5 3
+    400154: pCube6
+    400156: pCube6 1
+    400158: pCube6 2
+    400160: pCube6 3
+    400162: pCube7
+    400164: pCube7 1
+    400166: pCube7 2
+    400168: pCube7 3
+    400170: pCube8
+    400172: pCube8 1
+    400174: pCube8 2
+    400176: pCube8 3
+    400178: pCylinder1
+    400180: pCylinder2
+    400182: pCylinder3
+    400184: pSphere1
+    400186: pSphere1 1
+    400188: pSphere1 2
+    400190: pSphere1 3
+    400192: transform1
+    400194: transform1 1
+    400196: transform1 2
+    400198: transform1 3
+    400200: transform10
+    400202: transform11
+    400204: transform12
+    400206: transform2
+    400208: transform2 1
+    400210: transform2 2
+    400212: transform2 3
+    400214: transform3
+    400216: transform3 1
+    400218: transform3 2
+    400220: transform3 3
+    400222: transform4
+    400224: transform4 1
+    400226: transform4 2
+    400228: transform4 3
+    400230: transform5
+    400232: transform6
+    400234: transform7
+    400236: transform8
+    400238: transform9
+    400240: turnstile
+    400242: turnstile 1
+    400244: board4
+    2300000: blue_path
+    2300002: board1
+    2300004: board3
+    2300006: boarder1
+    2300008: boarder10
+    2300010: boarder11
+    2300012: boarder12
+    2300014: boarder13
+    2300016: boarder2
+    2300018: boarder5
+    2300020: boarder6
+    2300022: boarder7
+    2300024: boarder8
+    2300026: boarder9
+    2300028: bridge 1
+    2300030: center
+    2300032: edge1
+    2300034: edge2
+    2300036: edge3
+    2300038: edge4
+    2300040: end
+    2300042: hole3
+    2300044: hole4
+    2300046: lava
+    2300048: pCube11
+    2300050: pCube11 1
+    2300052: pCube12
+    2300054: pCube12 1
+    2300056: pCube13
+    2300058: pCube13 1
+    2300060: pCube14
+    2300062: pCube14 1
+    2300064: pCube15
+    2300066: pCube15 1
+    2300068: pCube16
+    2300070: pCube16 1
+    2300072: pCube17
+    2300074: pCube17 1
+    2300076: pCube18
+    2300078: pCube18 1
+    2300080: pCube2
+    2300082: pCube2 1
+    2300084: pCube2 2
+    2300086: pCube2 3
+    2300088: pCube4
+    2300090: pCube4 1
+    2300092: pCube4 2
+    2300094: pCube4 3
+    2300096: pCube8
+    2300098: pCube8 1
+    2300100: pCube8 2
+    2300102: pCube8 3
+    2300104: pSphere1
+    2300106: pSphere1 1
+    2300108: pSphere1 2
+    2300110: pSphere1 3
+    2300112: turnstile 1
+    2300114: board4
+    3300000: blue_path
+    3300002: board1
+    3300004: board3
+    3300006: boarder1
+    3300008: boarder10
+    3300010: boarder11
+    3300012: boarder12
+    3300014: boarder13
+    3300016: boarder2
+    3300018: boarder5
+    3300020: boarder6
+    3300022: boarder7
+    3300024: boarder8
+    3300026: boarder9
+    3300028: bridge 1
+    3300030: center
+    3300032: edge1
+    3300034: edge2
+    3300036: edge3
+    3300038: edge4
+    3300040: end
+    3300042: hole3
+    3300044: hole4
+    3300046: lava
+    3300048: pCube11
+    3300050: pCube11 1
+    3300052: pCube12
+    3300054: pCube12 1
+    3300056: pCube13
+    3300058: pCube13 1
+    3300060: pCube14
+    3300062: pCube14 1
+    3300064: pCube15
+    3300066: pCube15 1
+    3300068: pCube16
+    3300070: pCube16 1
+    3300072: pCube17
+    3300074: pCube17 1
+    3300076: pCube18
+    3300078: pCube18 1
+    3300080: pCube2
+    3300082: pCube2 1
+    3300084: pCube2 2
+    3300086: pCube2 3
+    3300088: pCube4
+    3300090: pCube4 1
+    3300092: pCube4 2
+    3300094: pCube4 3
+    3300096: pCube8
+    3300098: pCube8 1
+    3300100: pCube8 2
+    3300102: pCube8 3
+    3300104: pSphere1
+    3300106: pSphere1 1
+    3300108: pSphere1 2
+    3300110: pSphere1 3
+    3300112: turnstile 1
+    3300114: board4
+    4300000: lava
+    4300002: edge4
+    4300004: edge3
+    4300006: edge2
+    4300008: edge1
+    4300010: boarder1
+    4300012: boarder2
+    4300014: boarder5
+    4300016: boarder6
+    4300018: boarder7
+    4300020: boarder8
+    4300022: boarder9
+    4300024: boarder10
+    4300026: boarder11
+    4300028: boarder12
+    4300030: boarder13
+    4300032: pCube2
+    4300034: pCube4
+    4300036: pSphere1
+    4300038: pCube8
+    4300040: pCube2
+    4300042: pCube4
+    4300044: pSphere1
+    4300046: pCube8
+    4300048: pCube2
+    4300050: pCube4
+    4300052: pSphere1
+    4300054: pCube8
+    4300056: pCube2
+    4300058: pCube4
+    4300060: pSphere1
+    4300062: pCube8
+    4300064: end
+    4300066: hole3
+    4300068: hole4
+    4300070: bridge
+    4300072: pCube12
+    4300074: pCube13
+    4300076: pCube16
+    4300078: pCube17
+    4300080: pCube18
+    4300082: pCube15
+    4300084: pCube14
+    4300086: pCube11
+    4300088: pCube11
+    4300090: pCube12
+    4300092: pCube13
+    4300094: pCube14
+    4300096: pCube15
+    4300098: pCube16
+    4300100: pCube17
+    4300102: pCube18
+    4300104: center
+    4300106: turnstile
+    4300108: board1
+    4300110: board3
+    4300112: blue_path
+    4300114: board4
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 3db18d8cb6d590a4e9cc19fe27b1e9b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 5431046160c0a8d43884122e97d7a002, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
