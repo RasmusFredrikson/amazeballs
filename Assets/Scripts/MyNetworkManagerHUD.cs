@@ -13,7 +13,7 @@ namespace UnityEngine.Networking
         private int offsetY;
 
         private int scale;
-
+        private GameObject debugUI;
 
         void Awake()
         {
@@ -35,6 +35,14 @@ namespace UnityEngine.Networking
 
         void Update()
         {
+            if (Input.GetKeyDown("z"))
+            {
+                showGUI = !showGUI;
+                if (debugUI == null)
+                    debugUI = GameObject.Find("Debug UI");
+                debugUI.SetActive(showGUI);
+            }
+
             if (!showGUI)
                 return;
 

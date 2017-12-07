@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 135201665061195072}
   - component: {fileID: 23694349605640436}
   - component: {fileID: 54420906936558776}
-  - component: {fileID: 114260187353224810}
   - component: {fileID: 82998655856056478}
   - component: {fileID: 114247449440495996}
   - component: {fileID: 114514695069331388}
@@ -89,8 +88,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1965658883867548}
-  m_LocalRotation: {x: -0.7550952, y: -0.6297924, z: -0.053036056, w: 0.17429863}
-  m_LocalPosition: {x: -2.1722312, y: -0.88353056, z: 4.1188154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.92, y: 4, z: -4.06}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4312908549441478}
@@ -205,8 +204,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 67d343427f811e34eb450d5690daf2bb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2940129
-  m_Pitch: 1.0673591
+  m_Volume: 1
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -285,8 +284,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dc692d4f92ecd7d4e991b52d06e6a2d8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
-  m_Pitch: 0.85
+  m_Volume: 1
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -367,17 +366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thunkGO: {fileID: 1921280782639416}
   boardGO: {fileID: 0}
---- !u!114 &114260187353224810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1965658883867548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49c7db54b087ae14ba9161adba0ac1f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114514695069331388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -461,7 +449,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1877617180
+  randomSeed: 2063254190
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2768,7 +2756,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 0
     collisionMode: 0
@@ -2867,7 +2855,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2

@@ -215,53 +215,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 33243678876885436, guid: e3dd70c944bd3374a8753925518c12c5,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 776186446}
     - target: {fileID: 23750969557092178, guid: e3dd70c944bd3374a8753925518c12c5,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1161776292}
-    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
+    - target: {fileID: 33243678876885436, guid: e3dd70c944bd3374a8753925518c12c5,
         type: 2}
-      propertyPath: mTrackableName
-      value: '--- EMPTY ---'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
-        type: 2}
-      propertyPath: mDataSetPath
-      value: '--- EMPTY ---'
-      objectReference: {fileID: 0}
-    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
-        type: 2}
-      propertyPath: mAspectRatio
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
-        type: 2}
-      propertyPath: mWidth
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114932180528543420, guid: e3dd70c944bd3374a8753925518c12c5,
-        type: 2}
-      propertyPath: mHeight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4762782988278740, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4762782988278740, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4762782988278740, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 20
-      objectReference: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 776186446}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3dd70c944bd3374a8753925518c12c5, type: 2}
   m_IsPrefabParent: 0
@@ -441,7 +404,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: '--- EMPTY ---Material'
+  m_Name: trianglesMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -454,7 +417,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 19b3487b965a46b8bccb692517fca71d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -470,12 +433,12 @@ Prefab:
     - target: {fileID: 224852997068955042, guid: 248953b26aa226a419df1259a438ba31,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 237.5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 224852997068955042, guid: 248953b26aa226a419df1259a438ba31,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 148.5
+      value: 56.5
       objectReference: {fileID: 0}
     - target: {fileID: 224852997068955042, guid: 248953b26aa226a419df1259a438ba31,
         type: 2}
@@ -587,6 +550,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onClickMin
       objectReference: {fileID: 0}
+    - target: {fileID: 1884947125764224, guid: 248953b26aa226a419df1259a438ba31, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 248953b26aa226a419df1259a438ba31, type: 2}
   m_IsPrefabParent: 0
@@ -600,12 +567,12 @@ Prefab:
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 237.5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 148.5
+      value: 56.5
       objectReference: {fileID: 0}
     - target: {fileID: 224725657976623248, guid: 393206e2c16c7854e9473864a4cd0cd0,
         type: 2}
