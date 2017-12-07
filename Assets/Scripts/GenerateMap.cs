@@ -8,7 +8,7 @@ public class GenerateMap : MonoBehaviour {
 
     Mesh mesh;
 
-    public List<int> holes;
+    public List<Vector2> holes;
 
     int circlePoints = 24; // 8, 12, 24, 36, 64
     float radius = 0.5f;
@@ -33,7 +33,7 @@ public class GenerateMap : MonoBehaviour {
             for (int i = 0; i < boardX; i++) {
                 planeVertices[i + j * boardX] = new Vector3(i - boardX/2, 0, j-boardY/2);
 
-                if (i > 0 && j > 0 && !holes.Contains(i + j * boardX))
+                if (i > 0 && j > 0 && !holes.Contains(new Vector2(i, j)))
                 {
                     planeTriangles.Add(i-1 + (j-1)* boardX);
                     planeTriangles.Add(i + j * boardX);
@@ -47,7 +47,7 @@ public class GenerateMap : MonoBehaviour {
                 }
 
 
-                if (holes.Contains(i+j* boardX))
+                if (holes.Contains(new Vector2(i, j)))
                 {
                     Vector3[] verticesHole;
                     int[] trianglesHole;
