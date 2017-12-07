@@ -128,6 +128,9 @@ ModelImporter:
     100240: blue_path
     100242: transform11
     100244: transform12
+    100246: polySurface1
+    100248: polySurface2
+    100250: transform13
     400000: ball
     400002: board1
     400004: board2
@@ -251,6 +254,9 @@ ModelImporter:
     400240: blue_path
     400242: transform11
     400244: transform12
+    400246: polySurface1
+    400248: polySurface2
+    400250: transform13
     2300000: ball
     2300002: board1
     2300004: board3
@@ -311,6 +317,8 @@ ModelImporter:
     2300114: pCube19
     2300116: pCylinder3
     2300118: blue_path
+    2300120: polySurface1
+    2300122: polySurface2
     3300000: ball
     3300002: board1
     3300004: board3
@@ -371,6 +379,8 @@ ModelImporter:
     3300114: pCube19
     3300116: pCylinder3
     3300118: blue_path
+    3300120: polySurface1
+    3300122: polySurface2
     4300000: lava
     4300002: edge4
     4300004: edge3
@@ -431,6 +441,8 @@ ModelImporter:
     4300114: pCube19
     4300116: pCylinder3
     4300118: blue_path
+    4300120: polySurface2
+    4300122: polySurface1
     7400000: Take 001
     9500000: //RootNode
   externalObjects:

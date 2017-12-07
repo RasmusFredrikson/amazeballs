@@ -7,9 +7,12 @@ public class lavaReaction : MonoBehaviour
 
     public GameObject ball;
     public GameObject start;
+    public GameObject inside;
     Color lerpedColor = Color.white;
+    Color inside_color;
     Rigidbody rb;
     Renderer rend;
+    Renderer rend2;
     bool dead = false;
     bool reset = false;
     float t = 0;
@@ -19,6 +22,9 @@ public class lavaReaction : MonoBehaviour
     {
         rb = ball.GetComponent<Rigidbody>();
         rend = ball.GetComponent<Renderer>();
+        rend2 = inside.GetComponent<Renderer>();
+        inside_color = rend2.material.color;
+
     }
 
     // Update is called once per frame
@@ -42,6 +48,7 @@ public class lavaReaction : MonoBehaviour
         rb.drag = 6;
         lerpedColor = Color.Lerp(Color.white, Color.red, Mathf.Lerp(0, 1, t));
         rend.material.color = lerpedColor;
+        rend2.material.color = lerpedColor;
         if (t < 1) t += 0.5f * Time.deltaTime;
     }
 
@@ -62,6 +69,7 @@ public class lavaReaction : MonoBehaviour
         dead = false;
         reset = true;
         rend.material.color = Color.white;
+        rend2.material.color = inside_color;
         print(Time.time);
     }
 }
