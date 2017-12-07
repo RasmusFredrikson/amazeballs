@@ -2329,7 +2329,7 @@ Transform:
   m_GameObject: {fileID: 1963988233223344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100.46882, y: 100.46875, z: 100.46875}
+  m_LocalScale: {x: 47.163788, y: 47.16375, z: 47.16375}
   m_Children:
   - {fileID: 4320219653437072}
   - {fileID: 4677855780028210}
@@ -3895,7 +3895,7 @@ Transform:
   m_GameObject: {fileID: 1116887573240352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12.19, y: 3.61, z: -12.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.10935678, y: 0.121396765, z: 0.121396765}
   m_Children: []
   m_Father: {fileID: 4956870442574208}
   m_RootOrder: 1
@@ -7067,7 +7067,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.234, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 3.273862
+  m_Range: 1.9380226
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7103,7 +7103,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.74264705, g: 0.047, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 17.468496
+  m_Range: 6.4574113
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7139,7 +7139,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0, g: 0.647, b: 1, a: 1}
   m_Intensity: 2
-  m_Range: 17.468496
+  m_Range: 5.4337234
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7175,7 +7175,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.234, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 3.273862
+  m_Range: 1.775014
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7211,7 +7211,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.591, b: 0, a: 1}
   m_Intensity: 0.5
-  m_Range: 8.677287
+  m_Range: 4.1453733
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7247,7 +7247,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0, g: 0.8758622, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 2.8174014
+  m_Range: 1.38214
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7283,7 +7283,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0, g: 0.603, b: 1, a: 1}
   m_Intensity: 2.5
-  m_Range: 17.468496
+  m_Range: 7.147534
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7318,8 +7318,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.18620688, b: 0, a: 1}
-  m_Intensity: 2
-  m_Range: 17.468496
+  m_Intensity: 1.5
+  m_Range: 7.972945
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -7357,6 +7357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
   start: {fileID: 1531695422826604}
+  inside: {fileID: 0}
 --- !u!114 &114597422542521542
 MonoBehaviour:
   m_ObjectHideFlags: 1

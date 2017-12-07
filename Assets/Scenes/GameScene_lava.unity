@@ -261,91 +261,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4047239016884660, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047239016884660, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 47.163788
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047239016884660, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 47.16375
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047239016884660, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 47.16375
-      objectReference: {fileID: 0}
-    - target: {fileID: 108857620957363832, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 7.972945
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903049734677824, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.10935678
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903049734677824, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.121396765
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903049734677824, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.121396765
-      objectReference: {fileID: 0}
-    - target: {fileID: 108133934998510636, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 5.4337234
-      objectReference: {fileID: 0}
-    - target: {fileID: 108025045824878254, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 6.4574113
-      objectReference: {fileID: 0}
-    - target: {fileID: 108529835843515188, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 7.147534
-      objectReference: {fileID: 0}
-    - target: {fileID: 108345417193639960, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.38214
-      objectReference: {fileID: 0}
-    - target: {fileID: 108339971605201186, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 4.1453733
-      objectReference: {fileID: 0}
-    - target: {fileID: 108006579153168962, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.9380226
-      objectReference: {fileID: 0}
-    - target: {fileID: 108273822430172796, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Range
-      value: 1.775014
-      objectReference: {fileID: 0}
-    - target: {fileID: 1963988233223344, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
-      propertyPath: m_Name
-      value: Board
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114082788139368200, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
         type: 2}
       propertyPath: ball
       value: 
       objectReference: {fileID: 78343710}
-    - target: {fileID: 108857620957363832, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
-        type: 2}
-      propertyPath: m_Intensity
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 114082788139368200, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2,
         type: 2}
       propertyPath: inside
       value: 
       objectReference: {fileID: 2076047651}
+    - target: {fileID: 1963988233223344, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
+      propertyPath: m_Name
+      value: Board
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ab8626db7e68314eaaa6a6a66e9d2b2, type: 2}
   m_IsPrefabParent: 0
@@ -386,33 +317,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4683348363213196, guid: 7393985f2ee64bb40b62440d4d0c61f6, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683348363213196, guid: 7393985f2ee64bb40b62440d4d0c61f6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 4.358204
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683348363213196, guid: 7393985f2ee64bb40b62440d4d0c61f6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 4.3582044
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683348363213196, guid: 7393985f2ee64bb40b62440d4d0c61f6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 4.3582044
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1953540345731368, guid: 7393985f2ee64bb40b62440d4d0c61f6, type: 2}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 108095429020086004, guid: 7393985f2ee64bb40b62440d4d0c61f6,
-        type: 2}
-      propertyPath: m_Range
-      value: 2.2253895
-      objectReference: {fileID: 0}
-    - target: {fileID: 108095429020086004, guid: 7393985f2ee64bb40b62440d4d0c61f6,
-        type: 2}
-      propertyPath: m_Intensity
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7393985f2ee64bb40b62440d4d0c61f6, type: 2}
