@@ -10,14 +10,17 @@ public class Board : MonoBehaviour
 
     private Rigidbody rb;
     private GameObject indicators;
+    private GameObject selectedBoard;
 
     private int mode = 1;
     public int setMode = 4;
 
+    private int boardLevel = 0;
+
     private float ropeLength = 2f;
 
-    private float boardRadius = 10f;
-
+    private BoardConstants boardConstants; 
+        
     // Use this for initialization
     void Start() {
         height = new float[4];
@@ -28,6 +31,7 @@ public class Board : MonoBehaviour
         }
 
         indicators = Instantiate(Resources.Load("IndicatorHolder"), transform, false) as GameObject;
+        indicators.transform.localScale = new Vector3(1f / transform.localScale.x, 1f / transform.localScale.y, 1f / transform.localScale.z);
 
         Renderer rend1 = indicators.transform.GetChild(0).gameObject.GetComponent<Renderer>();
         rend1.material.SetColor("_Color", Color.red);
@@ -36,6 +40,8 @@ public class Board : MonoBehaviour
         Renderer rend3 = indicators.transform.GetChild(2).gameObject.GetComponent<Renderer>();
         rend3.material.SetColor("_Color", Color.green);
         indicators.SetActive(false);
+
+        changeBoard();
 
         for (int i = 1; i < setMode; i++)
         {
@@ -54,6 +60,11 @@ public class Board : MonoBehaviour
         if (Input.GetKeyDown("m")) 
         {
             changeMode();
+        }
+
+        if (Input.GetKeyDown("b"))
+        {
+            changeBoard();    
         }
 
         switch (mode)
@@ -95,6 +106,32 @@ public class Board : MonoBehaviour
         
     }
 
+    void changeBoard()
+    {
+        boardLevel = (boardLevel + 1) % 3;
+        Destroy(selectedBoard);
+
+        switch (boardLevel)
+        {
+            case 0:
+                selectedBoard = Instantiate(Resources.Load("SimpleBoard"), transform, false) as GameObject;
+                break;
+            case 1:
+                selectedBoard = Instantiate(Resources.Load("SpiralBoard"), transform, false) as GameObject;
+                break;
+            case 2:
+                selectedBoard = Instantiate(Resources.Load("ComplicatedBoard"), transform, false) as GameObject;
+                break;
+        }
+
+        boardConstants = selectedBoard.GetComponent<BoardConstants>() as BoardConstants;
+        GameObject.Find("Ball").transform.position = boardConstants.spawnPosition;
+
+        indicators.transform.GetChild(0).position = new Vector3(-(boardConstants.width + 1f), 0, boardConstants.length + 1f);
+        indicators.transform.GetChild(1).position = new Vector3(boardConstants.width + 1f, 0, boardConstants.length + 1f);
+        indicators.transform.GetChild(2).position = new Vector3(1f, 0, - (boardConstants.length + 1f));
+    }
+
     void changeMode()
     {
         // Remove mode specifics
@@ -119,9 +156,9 @@ public class Board : MonoBehaviour
         {
             case 1:
                 indicators.SetActive(true);
-                indicators.transform.GetChild(0).position = new Vector3(boardRadius, 0, boardRadius);
-                indicators.transform.GetChild(1).position = new Vector3(boardRadius, 0, -boardRadius);
-                indicators.transform.GetChild(2).position = new Vector3(-boardRadius, 0, -boardRadius);
+                indicators.transform.GetChild(0).position = new Vector3(boardConstants.width, 0, boardConstants.length);
+                indicators.transform.GetChild(1).position = new Vector3(boardConstants.width, 0, -boardConstants.length);
+                indicators.transform.GetChild(2).position = new Vector3(-boardConstants.width, 0, -boardConstants.length);
                 break;
             case 2:
                 rb = gameObject.AddComponent<Rigidbody>();
@@ -130,9 +167,9 @@ public class Board : MonoBehaviour
                 break;
             case 4:
                 indicators.SetActive(true);
-                indicators.transform.GetChild(0).position = new Vector3(-boardRadius, 0, boardRadius);
-                indicators.transform.GetChild(1).position = new Vector3(boardRadius, 0, boardRadius);
-                indicators.transform.GetChild(2).position = new Vector3(0, 0, -boardRadius);
+                indicators.transform.GetChild(0).position = new Vector3(-boardConstants.width, 0, boardConstants.length);
+                indicators.transform.GetChild(1).position = new Vector3(boardConstants.width, 0, boardConstants.length);
+                indicators.transform.GetChild(2).position = new Vector3(0, 0, -boardConstants.length);
                 break;
         }
     }
@@ -165,9 +202,9 @@ public class Board : MonoBehaviour
     // 3 Players
     void holdCorner()
     {
-        Vector3 point1 = new Vector3(boardRadius, height[0] * 10, boardRadius);
-        Vector3 point2 = new Vector3(boardRadius, height[1] * 10, -boardRadius);
-        Vector3 point3 = new Vector3(-boardRadius, height[2] * 10, -boardRadius);
+        Vector3 point1 = new Vector3(boardConstants.width, height[0] * 10, boardConstants.length);
+        Vector3 point2 = new Vector3(boardConstants.width, height[1] * 10, -boardConstants.length);
+        Vector3 point3 = new Vector3(-boardConstants.width, height[2] * 10, -boardConstants.length);
 
         Vector3 line1 = point1 - point2;
         Vector3 line2 = point1 - point3;
@@ -188,9 +225,9 @@ public class Board : MonoBehaviour
     // 3 Players
     void holdCornerMiddle()
     {
-        Vector3 point1 = new Vector3(-boardRadius, height[0] * 10, boardRadius);
-        Vector3 point2 = new Vector3(boardRadius, height[1] * 10, boardRadius);
-        Vector3 point3 = new Vector3(0, height[2] * 10, -boardRadius);
+        Vector3 point1 = new Vector3(-boardConstants.width, height[0] * 10, boardConstants.length);
+        Vector3 point2 = new Vector3(boardConstants.width, height[1] * 10, boardConstants.length);
+        Vector3 point3 = new Vector3(0, height[2] * 10, -boardConstants.length);
 
         Vector3 line1 = point3 - point1;
         Vector3 line2 = point3 - point2;
@@ -217,10 +254,10 @@ public class Board : MonoBehaviour
         Vector3 point4 = transform.position + transform.forward * -10 + transform.right * 10;
 
 
-        Vector3 force1 = new Vector3(boardRadius + 2, 4, boardRadius + 2) - point1;
-        Vector3 force2 = new Vector3(-boardRadius + 2, 4, boardRadius + 2) - point2;
-        Vector3 force3 = new Vector3(-boardRadius + 2, 4, -boardRadius + 2) -point3;
-        Vector3 force4 = new Vector3(boardRadius + 2, 4,-boardRadius + 2) - point4;
+        Vector3 force1 = new Vector3(boardConstants.width + 2, 4, boardConstants.length + 2) - point1;
+        Vector3 force2 = new Vector3(-boardConstants.width + 2, 4, boardConstants.length + 2) - point2;
+        Vector3 force3 = new Vector3(-boardConstants.width + 2, 4, -boardConstants.length + 2) - point3;
+        Vector3 force4 = new Vector3(boardConstants.width + 2, 4,-boardConstants.length + 2) - point4;
 
         force1 = force1.normalized * (force1.magnitude > ropeLength ? Mathf.Pow(force1.magnitude, 2): 0);
         force2 = force2.normalized * (force2.magnitude > ropeLength ? Mathf.Pow(force2.magnitude, 2) : 0);

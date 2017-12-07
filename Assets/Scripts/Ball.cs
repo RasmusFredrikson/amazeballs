@@ -65,14 +65,15 @@ public class Ball : MonoBehaviour
     private void ResetBall()
     {
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        gameObject.transform.position = new Vector3(-3.92f, 4.0f, -4.06f);
+        gameObject.transform.position = GameObject.Find("Board").transform.GetChild(1).GetComponent<BoardConstants>().spawnPosition;
         timeToFinishLine = 0;
         highscoreText.text = "";
     }
 
     void SaveHighscore(string timeToFinishLineStr)
     {
-        string filePath = @"./Highscore.csv";
+        string boardName = GameObject.Find("Board").transform.GetChild(1).GetComponent<BoardConstants>().name;
+        string filePath = @"./Highscore-" + boardName + ".csv";
         string delimiter = ",";
         string[][] output;
         string timeStamp = DateTime.Now.ToString();
@@ -105,8 +106,9 @@ public class Ball : MonoBehaviour
     void ReadHighscore(Boolean reachedFinishedLine)
     {
         List<float> highScores = new List<float>();
+        string boardName = GameObject.Find("Board").transform.GetChild(1).GetComponent<BoardConstants>().name;
 
-        using (var reader = new StreamReader(@"./Highscore.csv"))
+        using (var reader = new StreamReader(@"./Highscore-" + boardName + ".csv"))
         {
             reader.ReadLine(); //Remove the header
             while (!reader.EndOfStream)
