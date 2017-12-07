@@ -28,7 +28,7 @@ public class Board : MonoBehaviour
         }
 
         indicators = Instantiate(Resources.Load("IndicatorHolder"), transform, false) as GameObject;
-
+        indicators.transform.localScale = new Vector3(1f / transform.localScale.x, 1f / transform.localScale.y, 1f / transform.localScale.z);
         Renderer rend1 = indicators.transform.GetChild(0).gameObject.GetComponent<Renderer>();
         rend1.material.SetColor("_Color", Color.red);
         Renderer rend2 = indicators.transform.GetChild(1).gameObject.GetComponent<Renderer>();

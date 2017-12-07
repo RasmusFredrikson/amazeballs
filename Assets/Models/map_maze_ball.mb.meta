@@ -119,6 +119,18 @@ ModelImporter:
     100222: transform8
     100224: turnstile
     100226: turnstile 1
+    100228: pCube19
+    100230: pCylinder1
+    100232: pCylinder2
+    100234: pCylinder3
+    100236: transform10
+    100238: transform9
+    100240: blue_path
+    100242: transform11
+    100244: transform12
+    100246: polySurface1
+    100248: polySurface2
+    100250: transform13
     400000: ball
     400002: board1
     400004: board2
@@ -233,6 +245,18 @@ ModelImporter:
     400222: transform8
     400224: turnstile
     400226: turnstile 1
+    400228: pCube19
+    400230: pCylinder1
+    400232: pCylinder2
+    400234: pCylinder3
+    400236: transform10
+    400238: transform9
+    400240: blue_path
+    400242: transform11
+    400244: transform12
+    400246: polySurface1
+    400248: polySurface2
+    400250: transform13
     2300000: ball
     2300002: board1
     2300004: board3
@@ -290,6 +314,11 @@ ModelImporter:
     2300108: pSphere1 2
     2300110: pSphere1 3
     2300112: turnstile 1
+    2300114: pCube19
+    2300116: pCylinder3
+    2300118: blue_path
+    2300120: polySurface1
+    2300122: polySurface2
     3300000: ball
     3300002: board1
     3300004: board3
@@ -347,6 +376,11 @@ ModelImporter:
     3300108: pSphere1 2
     3300110: pSphere1 3
     3300112: turnstile 1
+    3300114: pCube19
+    3300116: pCylinder3
+    3300118: blue_path
+    3300120: polySurface1
+    3300122: polySurface2
     4300000: lava
     4300002: edge4
     4300004: edge3
@@ -404,6 +438,11 @@ ModelImporter:
     4300108: ball
     4300110: board1
     4300112: board3
+    4300114: pCube19
+    4300116: pCylinder3
+    4300118: blue_path
+    4300120: polySurface2
+    4300122: polySurface1
     7400000: Take 001
     9500000: //RootNode
   externalObjects:
@@ -411,12 +450,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 56cadf0fb6d6cfc4eb3f766f11c947e6, type: 2}
+    second: {fileID: 2100000, guid: 3db18d8cb6d590a4e9cc19fe27b1e9b7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert2
-    second: {fileID: 2100000, guid: 6038422967694b542a7e7b1402fd28c6, type: 2}
+    second: {fileID: 2100000, guid: 5431046160c0a8d43884122e97d7a002, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

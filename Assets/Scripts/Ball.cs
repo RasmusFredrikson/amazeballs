@@ -65,7 +65,7 @@ public class Ball : MonoBehaviour
     private void ResetBall()
     {
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        gameObject.transform.position = new Vector3(-3.92f, 4.0f, -4.06f);
+        gameObject.transform.position = new Vector3(0f, 4.0f, 0f);
         timeToFinishLine = 0;
         highscoreText.text = "";
     }
