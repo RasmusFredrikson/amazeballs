@@ -108,7 +108,7 @@ public class Board : MonoBehaviour
 
     void changeBoard()
     {
-        boardLevel = (boardLevel + 1) % 3;
+        boardLevel = (boardLevel + 1) % 4;
         Destroy(selectedBoard);
 
         switch (boardLevel)
@@ -121,6 +121,9 @@ public class Board : MonoBehaviour
                 break;
             case 2:
                 selectedBoard = Instantiate(Resources.Load("ComplicatedBoard"), transform, false) as GameObject;
+                break;
+            case 3:
+                selectedBoard = Instantiate(Resources.Load("LavaBoard"), transform, false) as GameObject;
                 break;
         }
 

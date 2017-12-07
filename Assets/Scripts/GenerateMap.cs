@@ -13,8 +13,8 @@ public class GenerateMap : MonoBehaviour {
     int circlePoints = 24; // 8, 12, 24, 36, 64
     float radius = 0.5f;
 
-    int boardX = 11;
-    int boardY = 11;
+    public int boardX = 11;
+    public int boardY = 11;
 
     // Use this for initialization
     void Start () {

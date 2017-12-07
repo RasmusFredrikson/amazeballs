@@ -62,7 +62,7 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void ResetBall()
+    public void ResetBall()
     {
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         gameObject.transform.position = GameObject.Find("Board").transform.GetChild(1).GetComponent<BoardConstants>().spawnPosition;
