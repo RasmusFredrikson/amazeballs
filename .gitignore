@@ -11,3 +11,12 @@ Assets/PostProcessing.meta
 *.apk
 QCAR/*
 Highscore.csv
+-Assets/Vuforia/*
+-Assets/Vuforia.meta
+-Assets/ForPrint/*
+-Assets/ForPrint.meta
+-Assets/StreamingAssets/*
+-Assets/StreamingAssets.meta
+-Assets/Editor/Vuforia/*
+-Assets/Editor.meta
+-Assets/Editor/Vuforia.meta
