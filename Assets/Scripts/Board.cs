@@ -130,6 +130,9 @@ public class Board : MonoBehaviour
         boardConstants = selectedBoard.GetComponent<BoardConstants>() as BoardConstants;
         GameObject.Find("Ball").transform.position = boardConstants.spawnPosition;
 
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+
         indicators.transform.GetChild(0).position = new Vector3(-(boardConstants.width + 1f), 0, boardConstants.length + 1f);
         indicators.transform.GetChild(1).position = new Vector3(boardConstants.width + 1f, 0, boardConstants.length + 1f);
         indicators.transform.GetChild(2).position = new Vector3(1f, 0, - (boardConstants.length + 1f));
@@ -178,21 +181,22 @@ public class Board : MonoBehaviour
     }
     
     void keybind() {
-        if (Input.GetKeyDown("w"))
+
+        if (Input.GetKey("w"))
 		    {
-             gameObject.transform.Rotate(new Vector3(-5, 0, 0));
+             gameObject.transform.Rotate(new Vector3(-5, 0, 0)* Time.deltaTime);
 		    }
-        else if (Input.GetKeyDown("s"))
+        else if (Input.GetKey("s"))
         {
-        	gameObject.transform.Rotate(new Vector3(5, 0, 0));
+        	gameObject.transform.Rotate(new Vector3(5, 0, 0) * Time.deltaTime);
         }
-        else if (Input.GetKeyDown("a"))
+        else if (Input.GetKey("a"))
         {
-        	gameObject.transform.Rotate(new Vector3(0, 0, -5));
+        	gameObject.transform.Rotate(new Vector3(0, 0, -5)* Time.deltaTime);
         }
-        else if (Input.GetKeyDown("d"))
+        else if (Input.GetKey("d"))
         {
-        	gameObject.transform.Rotate(new Vector3(0, 0, 5));
+        	gameObject.transform.Rotate(new Vector3(0, 0, 5)* Time.deltaTime);
         }
     }
 

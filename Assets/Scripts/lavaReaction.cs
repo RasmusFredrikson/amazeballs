@@ -5,8 +5,7 @@ using UnityEngine;
 public class lavaReaction : MonoBehaviour
 {
 
-    public GameObject ball;
-    public GameObject start;
+    private GameObject ball;
     public GameObject inside;
     Color lerpedColor = Color.white;
     Color inside_color;
@@ -14,12 +13,15 @@ public class lavaReaction : MonoBehaviour
     Renderer rend;
     Renderer rend2;
     bool dead = false;
-    bool reset = false;
     float t = 0;
+    float deadtime;
 
     // Use this for initialization
     void Start()
     {
+        ball = GameObject.Find("Ball");
+        inside = ball;
+
         rb = ball.GetComponent<Rigidbody>();
         rend = ball.GetComponent<Renderer>();
         rend2 = inside.GetComponent<Renderer>();
@@ -31,7 +33,14 @@ public class lavaReaction : MonoBehaviour
     void Update()
     {
         if (dead) this.ballDead();
-        if (reset) this.ballReset();
+        if (dead && Time.time - deadtime > 1f)
+        {
+            dead = false;
+            rend.material.color = Color.white;
+            rend2.material.color = inside_color;
+            this.ballReset();
+        }
+        
     }
 
     void OnTriggerEnter(Collider otherObj)
@@ -39,6 +48,7 @@ public class lavaReaction : MonoBehaviour
         if (otherObj.gameObject == ball)
         {
             dead = true;
+            deadtime = Time.time;
             StartCoroutine(deadTimer());
         }
     }
@@ -55,21 +65,13 @@ public class lavaReaction : MonoBehaviour
     void ballReset()
     {
         rb.drag = 0;
-        Vector3 start_pos = start.transform.position;
-        start_pos.y += 3f;
-        ball.transform.position = start_pos;
-        reset = false;
+        ball.transform.position = new Vector3(0, -100, 0);
         t = 0;
     }
 
     IEnumerator deadTimer()
     {
-        print(Time.time);
         yield return new WaitForSeconds(3);
-        dead = false;
-        reset = true;
-        rend.material.color = Color.white;
-        rend2.material.color = inside_color;
-        print(Time.time);
+        
     }
 }

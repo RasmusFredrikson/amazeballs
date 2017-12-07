@@ -754,7 +754,7 @@ MonoBehaviour:
   width: 10
   length: 5
   spawnPosition: {x: -7, y: 4, z: 3.5}
-  name: 
+  name: Simple
 --- !u!114 &114881358384155722
 MonoBehaviour:
   m_ObjectHideFlags: 1

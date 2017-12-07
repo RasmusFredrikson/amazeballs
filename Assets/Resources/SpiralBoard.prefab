@@ -1010,7 +1010,7 @@ MonoBehaviour:
   width: 10
   length: 5
   spawnPosition: {x: -8, y: 4, z: -3}
-  name: 
+  name: Spiral
 --- !u!212 &212483473150193678
 SpriteRenderer:
   m_ObjectHideFlags: 1

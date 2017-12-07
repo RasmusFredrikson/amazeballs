@@ -7397,7 +7397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e800f863847394eb09d3d5430dd78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {fileID: 0}
   inside: {fileID: 0}
 --- !u!114 &114659307236111192
 MonoBehaviour:
@@ -7413,7 +7412,7 @@ MonoBehaviour:
   width: 6
   length: 6
   spawnPosition: {x: -3.6, y: 4, z: 3.25}
-  name: 
+  name: Lavaboard
 --- !u!114 &114841777380683024
 MonoBehaviour:
   m_ObjectHideFlags: 1
