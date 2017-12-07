@@ -89,7 +89,6 @@ public class GenerateMap : MonoBehaviour {
             int[] triangles = mesh.triangles;
             Vector2[] uv = mesh.uv;
 
-            int triangleIndex = Random.Range(0, triangles.Length/3);
             
             
 

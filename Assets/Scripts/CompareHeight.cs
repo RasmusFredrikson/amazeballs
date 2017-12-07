@@ -57,7 +57,7 @@ public class CompareHeight : MonoBehaviour {
 
         if (player == null)
         {
-            Debug.LogError("Player is missing");
+            Debug.Log("Player is not yet initialized");
         } else
         {
             // Clamp height
@@ -67,10 +67,10 @@ public class CompareHeight : MonoBehaviour {
             // Set the height on the player
             if (height < initHeight)
             {
-                player.height = ((height - minHeight) / (initHeight - minHeight)) - 1;
+                player.changeHeight(((height - minHeight) / (initHeight - minHeight)) - 1);
             } else
             {
-                player.height = ((height - initHeight) / (maxHeight - initHeight));
+                player.changeHeight((height - initHeight) / (maxHeight - initHeight));
             }
 
             

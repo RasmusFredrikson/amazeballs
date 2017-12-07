@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Text;
 using System.IO;
 using System;
@@ -7,30 +8,44 @@ using System;
 public class Ball : MonoBehaviour
 {
 
-    float timeToFinishLine = 0f;
+    private float timeToFinishLine = 0f;
+    private Text timeText;
+    private Text highscoreText;
 
     // Use this for initialization
     void Start()
     {
-
+        GameObject highscoreCanvas = Instantiate(Resources.Load("HighscoreCanvas")) as GameObject;
+        timeText = highscoreCanvas.transform.GetChild(0).gameObject.GetComponent<Text>();
+        highscoreText = highscoreCanvas.transform.GetChild(1).gameObject.GetComponent<Text>();
+        timeText.text = "Time: " + timeToFinishLine.ToString();
+        highscoreText.text = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeToFinishLine += Time.deltaTime;
+        if (Time.timeScale != 0){
+            timeToFinishLine += Time.deltaTime;
+            timeText.text = "Time: " + timeToFinishLine.ToString();
+        }
         gameObject.transform.Rotate(1, 1, 1); //Keeps the ball from getting stuck
         if (gameObject.transform.position.y < -30f)
         {
             ResetBall();
         }
 
-        if (Input.GetKeyDown("h"))
+        if (Input.GetKeyDown("p"))
         {
-            ReadHighscore();
+            Time.timeScale = (Time.timeScale + 1) % 2;
+            if (Time.timeScale == 0)
+                ReadHighscore(false);
+            else
+                highscoreText.text = "";
         }
         if (Input.GetKeyDown("r"))
         {
+            Time.timeScale = 1;
             ResetBall();
         }
     }
@@ -39,9 +54,11 @@ public class Ball : MonoBehaviour
     {
         if (other.tag == "Finish")
         {
-            Debug.Log("You have reached the goal");
-            SaveHighscore();
-            ResetBall();
+            Time.timeScale = 0;
+            string timeToFinishLineStr = timeToFinishLine.ToString();
+            timeText.text = "Time: " + timeToFinishLineStr;
+            SaveHighscore(timeToFinishLineStr);
+            ReadHighscore(true);
         }
     }
 
@@ -50,14 +67,14 @@ public class Ball : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         gameObject.transform.position = new Vector3(-3.92f, 4.0f, -4.06f);
         timeToFinishLine = 0;
+        highscoreText.text = "";
     }
 
-    void SaveHighscore()
+    void SaveHighscore(string timeToFinishLineStr)
     {
         string filePath = @"./Highscore.csv";
         string delimiter = ",";
         string[][] output;
-        string timeToFinishLineStr = timeToFinishLine.ToString();
         string timeStamp = DateTime.Now.ToString();
         string[] resultRow = new string[] { timeToFinishLineStr, timeStamp };
 
@@ -85,27 +102,44 @@ public class Ball : MonoBehaviour
 
     }
 
-    void ReadHighscore()
+    void ReadHighscore(Boolean reachedFinishedLine)
     {
-        List<string[]> highScores = new List<string[]>();
+        List<float> highScores = new List<float>();
 
         using (var reader = new StreamReader(@"./Highscore.csv"))
         {
+            reader.ReadLine(); //Remove the header
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
                 var values = line.Split(',');
-                highScores.Add(values);
+                highScores.Add(float.Parse(values[0]));
             }
         }
-        foreach (var highScore in highScores)
+
+        highScores.Sort();
+        if (reachedFinishedLine)
         {
-            var highScorePrint = "";
-            foreach (var column in highScore)
+            highscoreText.text = "You didn't reach a highscore :( \n";
+            for (int i = 0; i < highScores.Count && i < 10; i++)
             {
-                highScorePrint += " : " + column;
+                if (Mathf.Abs(timeToFinishLine - highScores[i]) < 1E-2)
+                {
+                    highscoreText.text = "Congratz!\nYou finished in " + (i+1) + " place.\n";
+                    break;
+                }
             }
-            Debug.Log(highScorePrint);
+            highscoreText.text += "Press 'R' to play again. \n\nBest times \n";
+        } else 
+            highscoreText.text += "Paused. \nPress 'P' to unpause and 'R' to reset. \n\nBest times \n";
+
+        for (int i = 0; i < highScores.Count && i < 10; i++)
+        {
+            highscoreText.text += Math.Round(highScores[i], 2) + "s\n";
         }
+    }
+
+    void compare() {
+        
     }
 }
