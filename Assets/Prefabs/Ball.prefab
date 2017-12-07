@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 135201665061195072}
   - component: {fileID: 23694349605640436}
   - component: {fileID: 54420906936558776}
-  - component: {fileID: 114260187353224810}
   - component: {fileID: 82998655856056478}
   - component: {fileID: 114247449440495996}
   - component: {fileID: 114514695069331388}
@@ -367,17 +366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thunkGO: {fileID: 1921280782639416}
   boardGO: {fileID: 0}
---- !u!114 &114260187353224810
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1965658883867548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49c7db54b087ae14ba9161adba0ac1f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114514695069331388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2768,7 +2756,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 0
     collisionMode: 0
