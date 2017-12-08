@@ -20,3 +20,6 @@ Assets/StreamingAssets.meta
 Assets/Editor/Vuforia/*
 Assets/Editor.meta
 Assets/Editor/Vuforia.meta
+*.exe
+*.dll
+*_Data
