@@ -27,7 +27,8 @@ public class Ball : MonoBehaviour
     {
         if (Time.timeScale != 0){
             timeToFinishLine += Time.deltaTime;
-            timeText.text = "Time: " + timeToFinishLine.ToString();
+            
+            timeText.text = "Time: " + Math.Round(timeToFinishLine, 2).ToString();
         }
         gameObject.transform.Rotate(1, 1, 1); //Keeps the ball from getting stuck
         if (gameObject.transform.position.y < -30f)
@@ -56,7 +57,7 @@ public class Ball : MonoBehaviour
         {
             Time.timeScale = 0;
             string timeToFinishLineStr = timeToFinishLine.ToString();
-            timeText.text = "Time: " + timeToFinishLineStr;
+            timeText.text = "Time: " + Math.Round(timeToFinishLine, 2).ToString();
             SaveHighscore(timeToFinishLineStr);
             ReadHighscore(true);
         }
@@ -123,7 +124,7 @@ public class Ball : MonoBehaviour
         if (reachedFinishedLine)
         {
             highscoreText.text = "You didn't reach a highscore :( \n";
-            for (int i = 0; i < highScores.Count && i < 10; i++)
+            for (int i = 0; i < highScores.Count && i < 5; i++)
             {
                 if (Mathf.Abs(timeToFinishLine - highScores[i]) < 1E-2)
                 {
@@ -133,9 +134,9 @@ public class Ball : MonoBehaviour
             }
             highscoreText.text += "Press 'R' to play again. \n\nBest times \n";
         } else 
-            highscoreText.text += "Paused. \nPress 'P' to unpause and 'R' to reset. \n\nBest times \n";
+            highscoreText.text += "Paused. \nPress 'P' to unpause or 'R' to reset. \n\nBest times \n";
 
-        for (int i = 0; i < highScores.Count && i < 10; i++)
+        for (int i = 0; i < highScores.Count && i < 5; i++)
         {
             highscoreText.text += Math.Round(highScores[i], 2) + "s\n";
         }

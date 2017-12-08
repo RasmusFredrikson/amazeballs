@@ -11,11 +11,12 @@ public class Board : MonoBehaviour
     private Rigidbody rb;
     private GameObject indicators;
     private GameObject selectedBoard;
+    private GameObject light;
 
     private int mode = 1;
     public int setMode = 4;
 
-    private int boardLevel = 0;
+    private int boardLevel = 1;
 
     private float ropeLength = 2f;
 
@@ -41,17 +42,18 @@ public class Board : MonoBehaviour
         rend3.material.SetColor("_Color", Color.green);
         indicators.SetActive(false);
 
+        light = GameObject.Find("Directional Light");
+
         changeBoard();
 
         for (int i = 1; i < setMode; i++)
         {
             changeMode();
         }
-            
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         for (int i = 0; i < 4; i++)
         {
             //Debug.LogError("Height" + i + " : " + height[i]);
@@ -114,15 +116,19 @@ public class Board : MonoBehaviour
         switch (boardLevel)
         {
             case 0:
+                light.SetActive(true);
                 selectedBoard = Instantiate(Resources.Load("SimpleBoard"), transform, false) as GameObject;
                 break;
             case 1:
+                light.SetActive(true);
                 selectedBoard = Instantiate(Resources.Load("SpiralBoard"), transform, false) as GameObject;
                 break;
             case 2:
+                light.SetActive(true);
                 selectedBoard = Instantiate(Resources.Load("ComplicatedBoard"), transform, false) as GameObject;
                 break;
             case 3:
+                light.SetActive(true);  
                 selectedBoard = Instantiate(Resources.Load("LavaBoard"), transform, false) as GameObject;
                 break;
         }
@@ -147,8 +153,8 @@ public class Board : MonoBehaviour
                 indicators.SetActive(false);
                 break;
             case 2:
-                Destroy(gameObject.GetComponent<Rigidbody>());
-                rb = null;
+                //Destroy(gameObject.GetComponent<Rigidbody>());
+                //rb = null;
                 break;
             case 4:
                 indicators.SetActive(false);
@@ -167,9 +173,9 @@ public class Board : MonoBehaviour
                 indicators.transform.GetChild(2).position = new Vector3(-boardConstants.width, 0, -boardConstants.length);
                 break;
             case 2:
-                rb = gameObject.AddComponent<Rigidbody>();
-                rb.useGravity = false;
-                rb.mass = 100;
+                //rb = gameObject.AddComponent<Rigidbody>();
+                //rb.useGravity = false;
+                //rb.mass = 100;
                 break;
             case 4:
                 indicators.SetActive(true);
@@ -224,9 +230,9 @@ public class Board : MonoBehaviour
 
         Vector3 pos = (point1 + point3) / 2f;
 
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, pos,  1 *Time.deltaTime);
+        gameObject.transform.position = Vector3.MoveTowards(transform.position, pos,  0.00001f);
 
-        gameObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(line1, normal), 150*Time.deltaTime);
+        gameObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(line1, normal), 1 / 1000);
     }
 
     // 3 Players
@@ -247,9 +253,13 @@ public class Board : MonoBehaviour
 
         Vector3 pos = (point3 + ((point1 + point2) / 2f)) / 2f;
 
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, pos, 1 * Time.deltaTime);
+        if (Time.timeScale != 0f)
+        {
+            gameObject.transform.position = Vector3.MoveTowards(transform.position, pos, 0.01f);
 
-        gameObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(forward, normal), 150 * Time.deltaTime);
+            gameObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(forward, normal), 1f / 1f);
+
+        }
     }
 
     // 4 Players

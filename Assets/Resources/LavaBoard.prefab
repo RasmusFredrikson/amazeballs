@@ -813,7 +813,7 @@ GameObject:
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1426134218584690
 GameObject:
@@ -1520,6 +1520,7 @@ GameObject:
   - component: {fileID: 4356477178234528}
   - component: {fileID: 33910083192706016}
   - component: {fileID: 23676118375704764}
+  - component: {fileID: 64264754700022442}
   m_Layer: 0
   m_Name: bridge 1
   m_TagString: Untagged
@@ -1788,7 +1789,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1817111935270448
 GameObject:
@@ -6786,6 +6787,20 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: 3b5fdb66a586e5442b5beca0b523bcd0, type: 3}
+--- !u!64 &64264754700022442
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728985656217228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300070, guid: 3b5fdb66a586e5442b5beca0b523bcd0, type: 3}
 --- !u!64 &64404371891844344
 MeshCollider:
   m_ObjectHideFlags: 1
