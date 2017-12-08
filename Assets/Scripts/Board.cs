@@ -11,12 +11,11 @@ public class Board : MonoBehaviour
     private Rigidbody rb;
     private GameObject indicators;
     private GameObject selectedBoard;
-    public GameObject lavaBoard;
 
     private int mode = 1;
     public int setMode = 4;
 
-    private int boardLevel = 2;
+    private int boardLevel = 0;
 
     private float ropeLength = 2f;
 
@@ -42,7 +41,6 @@ public class Board : MonoBehaviour
         rend3.material.SetColor("_Color", Color.green);
         indicators.SetActive(false);
 
-        lavaBoard.SetActive(false);
         changeBoard();
 
         for (int i = 1; i < setMode; i++)
@@ -111,11 +109,7 @@ public class Board : MonoBehaviour
     void changeBoard()
     {
         boardLevel = (boardLevel + 1) % 4;
-
-        if (selectedBoard != lavaBoard)
-            Destroy(selectedBoard);
-        else
-            selectedBoard.SetActive(false);
+        Destroy(selectedBoard);
 
         switch (boardLevel)
         {
@@ -129,8 +123,7 @@ public class Board : MonoBehaviour
                 selectedBoard = Instantiate(Resources.Load("ComplicatedBoard"), transform, false) as GameObject;
                 break;
             case 3:
-                lavaBoard.SetActive(true);
-                selectedBoard = lavaBoard;
+                selectedBoard = Instantiate(Resources.Load("LavaBoard"), transform, false) as GameObject;
                 break;
         }
 
